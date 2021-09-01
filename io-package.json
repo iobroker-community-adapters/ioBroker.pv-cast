@@ -1,0 +1,78 @@
+{
+	"common": {
+		"name": "solcast",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "forecast for solar-systems",
+			"de": "Prognose für Solaranlagen",
+			"ru": "прогноз для солнечных систем",
+			"pt": "previsão para sistemas solares",
+			"nl": "voorspelling voor zonnestelsels",
+			"fr": "prévisions pour les systèmes solaires",
+			"it": "previsioni per i sistemi solari",
+			"es": "previsión para sistemas solares",
+			"pl": "prognoza dla systemów słonecznych",
+			"zh-cn": "太阳系预报"
+		},
+		"desc": {
+			"en": "solcast",
+			"de": "solcast",
+			"ru": "солкаст",
+			"pt": "solcast",
+			"nl": "solcast",
+			"fr": "solcast",
+			"it": "solcast",
+			"es": "solcast",
+			"pl": "solcast",
+			"zh-cn": "solcast"
+		},
+		"authors": [
+			"MeisterTR <meistertr.smarthome@gmail.com>"
+		],
+		"keywords": [
+			"PV",
+			"forecast",
+			"solar-systems"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "solcast.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/MeisterTR/ioBroker.solcast/master/admin/solcast.png",
+		"readme": "https://github.com/MeisterTR/ioBroker.solcast/blob/master/README.md",
+		"loglevel": "info",
+		"type": "energy",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"materialize": true,
+		"mode": "schedule",
+        "schedule": "*/15 * * * *",
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
