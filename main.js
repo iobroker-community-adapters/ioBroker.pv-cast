@@ -83,6 +83,9 @@ class Solcast extends utils.Adapter {
 
 		result = await this.checkGroupAsync('admin', 'admin');
 		this.log.info('check group user admin group admin: ' + result);
+
+		this.terminate ? this.terminate('All data handled, adapter stopped until next scheduled moment') : process.exit();
+
 	}
 
 	/**
