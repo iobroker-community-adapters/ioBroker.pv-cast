@@ -1,25 +1,105 @@
-![Logo](admin/solcast.png)
-# ioBroker.solcast
+![Logo](admin/pv-cast.png)
+# ioBroker.pv-cast
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.solcast.svg)](https://www.npmjs.com/package/iobroker.solcast)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.solcast.svg)](https://www.npmjs.com/package/iobroker.solcast)
-![Number of Installations (latest)](https://iobroker.live/badges/solcast-installed.svg)
-![Number of Installations (stable)](https://iobroker.live/badges/solcast-stable.svg)
-[![Dependency Status](https://img.shields.io/david/MeisterTR/iobroker.solcast.svg)](https://david-dm.org/MeisterTR/iobroker.solcast)
+[![NPM version](https://img.shields.io/npm/v/iobroker.pv-cast.svg)](https://www.npmjs.com/package/iobroker.pv-cast)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.pv-cast.svg)](https://www.npmjs.com/package/iobroker.pv-cast)
+![Number of Installations (latest)](https://iobroker.live/badges/pv-cast-installed.svg)
+![Number of Installations (stable)](https://iobroker.live/badges/pv-cast-stable.svg)
+[![Dependency Status](https://img.shields.io/david/MeisterTR/iobroker.pv-cast.svg)](https://david-dm.org/MeisterTR/iobroker.pv-cast)
 
-[![NPM](https://nodei.co/npm/iobroker.solcast.png?downloads=true)](https://nodei.co/npm/iobroker.solcast/)
+[![NPM](https://nodei.co/npm/iobroker.pv-cast.png?downloads=true)](https://nodei.co/npm/iobroker.pv-cast/)
 
-**Tests:** ![Test and Release](https://github.com/MeisterTR/ioBroker.solcast/workflows/Test%20and%20Release/badge.svg)
+**Tests:** ![Test and Release](https://github.com/MeisterTR/ioBroker.pv-cast/workflows/Test%20and%20Release/badge.svg)
 
-## solcast adapter for ioBroker
+## pv-cast adapter for ioBroker
 
-WORK IN PROGRESS
+PV forecast
 
+## Developer manual
+This section is intended for the developer. It can be deleted later
+
+### Getting started
+
+You are almost done, only a few steps left:
+1. Create a new repository on GitHub with the name `ioBroker.pv-cast`
+1. Initialize the current folder as a new git repository:  
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial commit"
+    ```
+1. Link your local repository with the one on GitHub:  
+    ```bash
+    git remote add origin https://github.com/MeisterTR/ioBroker.pv-cast
+    ```
+
+1. Push all files to the GitHub repo:  
+    ```bash
+    git push origin master
+    ```
+
+1. Head over to [main.js](main.js) and start programming!
+
+### Best Practices
+We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
+check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
+
+### Scripts in `package.json`
+Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
+| Script name | Description |
+|-------------|-------------|
+| `test:js` | Executes the tests you defined in `*.test.js` files. |
+| `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
+| `test:unit` | Tests the adapter startup with unit tests (fast, but might require module mocks to work). |
+| `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
+| `test` | Performs a minimal test run on package files and your tests. |
+| `check` | Performs a type-check on your code (without compiling anything). |
+| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
+| `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
+
+### Writing tests
+When done right, testing code is invaluable, because it gives you the 
+confidence to change your code while knowing exactly if and when 
+something breaks. A good read on the topic of test-driven development 
+is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
+Although writing tests before the code might seem strange at first, but it has very 
+clear upsides.
+
+The template provides you with basic tests for the adapter startup and package files.
+It is recommended that you add your own tests into the mix.
+
+### Publishing the adapter
+Since you have chosen GitHub Actions as your CI service, you can 
+enable automatic releases on npm whenever you push a new git tag that matches the form 
+`v<major>.<minor>.<patch>`. The necessary steps are described in `.github/workflows/test-and-release.yml`.
+
+Since you installed the release script, you can create a new
+release simply by calling:
+```bash
+npm run release
+```
+Additional command line options for the release script are explained in the
+[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
+
+To get your adapter released in ioBroker, please refer to the documentation 
+of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
+
+### Test the adapter manually with dev-server
+Since you set up `dev-server`, you can use it to run, test and debug your adapter.
+
+You may start `dev-server` by calling from your dev directory:
+```bash
+dev-server watch
+```
+
+The ioBroker.admin interface will then be available at http://localhost:8081/
+
+Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#command-line) for more details.
 
 ## Changelog
 <!--
-	Placeholder for the next version (at the beginning of the line):
-	### **WORK IN PROGRESS**
+    Placeholder for the next version (at the beginning of the line):
+    ### **WORK IN PROGRESS**
 -->
 
 ### **WORK IN PROGRESS**
@@ -28,7 +108,7 @@ WORK IN PROGRESS
 ## License
 MIT License
 
-Copyright (c) 2021 MeisterTR <meistertr.smarthome@gmail.com>
+Copyright (c) 2021 MeisterTR <smarthome.meistertr@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
