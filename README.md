@@ -1,3 +1,5 @@
+# This Adapter is no longer maintained
+
 ![Logo](admin/pv-cast.png)
 # ioBroker.pv-cast
 
